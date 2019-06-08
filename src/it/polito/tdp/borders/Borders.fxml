@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.borders.BordersController">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.borders.BordersController">
    <top>
       <Label text="Country Borders" BorderPane.alignment="CENTER">
          <font>
@@ -39,6 +40,25 @@
                <VBox.margin>
                   <Insets top="15.0" />
                </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" spacing="5.0">
+               <children>
+                  <Label prefHeight="21.0" prefWidth="110.0" text="Scegliere Stato:">
+                     <HBox.margin>
+                        <Insets left="10.0" top="5.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="cboxCountry" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <Button fx:id="btnVicini" mnemonicParsing="false" onAction="#doCercaVicini" text="Cerca vicini">
+                     <HBox.margin>
+                        <Insets right="5.0" top="5.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
             </HBox>
             <TextArea fx:id="txtResult" editable="false" wrapText="true">
                <VBox.margin>
