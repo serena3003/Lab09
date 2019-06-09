@@ -77,6 +77,13 @@ public class BordersController {
 			
 			List<Country> viciniIter = model.cercaViciniIter(c);
 			txtResult.appendText("\nI nodi raggiungibili da " + c.getAbb() + " sono : \n " + viciniIter);
+			
+			/*boolean equa = true;
+			for(Country c1 : vicini)
+				if(!viciniIter.contains(c1))
+					equa = false;
+			System.out.println(equa);*/
+			
 
 		} catch (RuntimeException e) {
 			// If the countries are inserted in the ComboBox when the graph is created,

@@ -40,7 +40,7 @@ public class BordersDAO {
 	public List<Border> getCountryPairs(int anno, Map<Integer, Country> idMap) {
 		
 		String sql = "SELECT state1no, state2no FROM country, contiguity " + 
-				"WHERE country.CCode = contiguity.state1no AND conttype=1 AND contiguity.YEAR = ?";
+				"WHERE country.CCode = contiguity.state1no AND conttype=1 AND contiguity.YEAR <= ?";
 		
 		List<Border> result = new ArrayList<Border>();
 		
@@ -67,7 +67,7 @@ public class BordersDAO {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("Errore connessione al database");
+			System.out.println("Errore connessione al database - getCountryPairs");
 			throw new RuntimeException("Error Connection Database");
 		}
 		
