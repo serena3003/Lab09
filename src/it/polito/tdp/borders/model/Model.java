@@ -100,6 +100,7 @@ public class Model {
 	
 	public void cerca(Country c, List<Country> res) {
 		Set<DefaultEdge> edges = grafo.edgesOf(c);
+		System.out.println(edges);
 		for(DefaultEdge e : edges) {
 			if(res.contains(grafo.getEdgeSource(e)) && !res.contains(grafo.getEdgeTarget(e))) {
 				Country t =grafo.getEdgeTarget(e);
